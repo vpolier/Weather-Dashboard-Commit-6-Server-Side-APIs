@@ -55,10 +55,10 @@ var getCityWeather = function(city) {
             alert("Error:" + response.statusText);
         }
     })
-//if network error
-.catch(function(error) {
+    //if network error
+    .catch(function(error) {
     alert("Unable to connect to Open Weather");
-}) 
+    }) 
 }
       
 //requesting UV index API.
@@ -73,14 +73,14 @@ var searchCityUV = function(lon, lat, city) {
         } else {
             alert("Error:" + response.statusText);
         }
-    })
-    //if network error
-    .catch(function(error) {
-    alert("Unable to connect to Open Weather");
+        })
+
+        //if network error
+        .catch(function(error) {
+            alert("Unable to connect to Open Weather");
     }) 
 };   
     
-
 // Display current weather data .
 var displayCityWeather = function(city, searchTerm) {
     // clear old content 
