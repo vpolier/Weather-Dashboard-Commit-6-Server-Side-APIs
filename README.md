@@ -1,4 +1,8 @@
 # Weather-Dashboard-Commit-6-Server-Side-APIs
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
+
+
+## Description
 This application uses server-side API and JavaScript to create a weather dashboard.
 
 
