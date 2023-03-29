@@ -4,8 +4,8 @@ var key = "2ccfe3e460e03ffd8c64d6662941c6e0";
 // DOM elements to display on page
 var userFormEl = document.querySelector("#user-form");
 var cityInputEl = document.querySelector("#city-input");
-var cityContaineEl = document.querySelector("#city_container");
-var citySearcgTerm = document.querySelector("#city-search-term");
+var cityContainerEl = document.querySelector("#city-container");
+var citySearchTerm = document.querySelector("#city-search-term");
 var currentWeather = document.querySelector("#current-weather");
 var previousCityEl = document.querySelector("#search-container");
 var fiveDatEl = document.querySelector("#forecast-cards");
@@ -43,12 +43,13 @@ var clickHandler = function (event) {
         
     //requesting Current Weather API
 var getCityWeather = function(city) {
-    var apiURL = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}" + city + "&units=imperial&appid=" + key;
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=imperial`
 
       //if response was successful.
     fetch(apiURL).then(function(response){
         if (response.ok){
             response.json().then(function(data){
+                console.log(data)
                 displayCityWeather(data,city);
             });
         } else {
@@ -63,7 +64,7 @@ var getCityWeather = function(city) {
       
 //requesting UV index API.
 var searchCityUV = function(lon, lat, city) {
-    var uvUrl = "https://api.openweathermap.org/data/2.5/uvi?q=" + city + "&appid=" + key + "&lat=" + lat + "&lon=" + lon;
+    var uvURL = "https://api.openweathermap.org/data/2.5/uvi?q=" + city + "&appid=" + key + "&lat=" + lat + "&lon=" + lon;
 
     fetch(uvURL).then(function(response){
         if (response.ok){

@@ -24,6 +24,7 @@ ul {
 
 #forecast-cards {
     justify-content: space-around;
+    display: flex;
 }
 
 .card-content {
